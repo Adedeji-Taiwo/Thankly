@@ -5,7 +5,7 @@ Revivar Assessment - A downloadable appreciation card generator
 
 This project was bootstrapped with [Vite](https://vitejs.dev/guide/).
 
-![Screenshot](https://github.com/Adedeji-Taiwo/Country-Data/blob/main/Screenshot%202022-01-31%20113920.png)
+![Screenshot](https://github.com/Adedeji-Taiwo/Thankly/blob/main/src/assets/screenshot/thankly-home.png)
 
 - Live link: https://thankly.netlify.app/
 
