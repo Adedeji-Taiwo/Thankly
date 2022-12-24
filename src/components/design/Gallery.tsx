@@ -77,13 +77,13 @@ const Gallery: FC<GalleryProps> = () => {
 
 
     //utilize this condition for image selections and not upload
-    if (!uploadedImg) {
+    /*if (!uploadedImg) {
       return htmlToImage
       .toPng(document.getElementById('my-img')!)
       .then((dataUrl) => {
         download(dataUrl, `Thankly-${bottomText}`);
       });
-    }
+    }*/
 
 
     //use rest of function when its file upload
@@ -138,6 +138,8 @@ const Gallery: FC<GalleryProps> = () => {
     );
   };
 
+
+  console.log(currentIndex);
 
   //modal buttons functions
   const openModal = (e: React.MouseEvent, index: number) => {

@@ -105,7 +105,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                                         enabled={enabled}
                                         setEnabled={setEnabled}
                                     />
-                                    <button  onClick={handlePng} className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                                    <button type='button'  onClick={handlePng} className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
                                         <span  className="relative text-base font-semibold text-white">PNG</span>
                                     </button>
                                 </div>
@@ -117,7 +117,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                                 enabled={enabled}
                                 setEnabled={setEnabled}
                             />
-                                <button  onClick={handlePng} className="relative flex h-11 w-1/2 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                                <button  type='button' onClick={handlePng} className="relative flex h-11 w-1/2 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
                                     <span className="relative text-base font-semibold text-white">Download PNG</span>
                                 </button>
                             </div>
