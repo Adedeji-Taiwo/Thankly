@@ -77,20 +77,24 @@ const Gallery: FC<GalleryProps> = () => {
 
 
     //utilize this condition for image selections and not upload
-    /*if (!uploadedImg) {
+    if (!uploadedImg) {
       return htmlToImage
       .toPng(document.getElementById('my-img')!)
       .then((dataUrl) => {
         download(dataUrl, `Thankly-${bottomText}`);
       });
-    }*/
+    }
 
-
-    //use rest of function when its file upload
-    const copiedElem = elem.cloneNode(
-      true
-    ) as HTMLElement;
    
+      //use rest of function when its file upload
+      const copiedElem = elem.cloneNode(
+        true
+      ) as HTMLElement;
+  
+
+   
+
+    console.log(copiedElem);
 
     copiedElem.style.width = '400px';
     copiedElem.style.height = '500px';
@@ -144,6 +148,7 @@ const Gallery: FC<GalleryProps> = () => {
   //modal buttons functions
   const openModal = (e: React.MouseEvent, index: number) => {
     setCurrentIndex(index);
+
   };
 
   const closeModal = (e: React.MouseEvent | undefined) => {

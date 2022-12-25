@@ -55,7 +55,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                         <button id="prev" className={`absolute left-0 right-auto top-1/2 rounded-r-md inline ${hasPrev ? 'text-gray-900' : 'text-white'} text-3xl font-light ${hasPrev ? 'bg-white' : 'bg-primary'}  w-10 h-10 text-center`} onClick={findPrev} disabled={!hasPrev}>&lsaquo;</button>
                         <button id="next" className={`absolute right-0  top-1/2 rounded-l-md inline  ${hasNext ? 'text-gray-900' : 'text-white'} text-3xl font-light ${hasNext ? 'bg-white' : 'bg-primary'} w-10 h-10 text-center`} onClick={findNext} disabled={!hasNext}>&rsaquo;</button>
                         {/* This id is defined for downloading images */}
-                        <img src={src} className="w-full aspect-square" />
+                        <img src={src} className="w-full aspect-square md:h-auto h-[40vh]" />
                         <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl ${enabled ? 'text-white' : 'text-black'} top-7`}>{topText}</h2>
                         <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl capitalize ${enabled ? 'text-white' : 'text-black'}  text-white bottom-7`}>{bottomText}</h2>
                     </div>
