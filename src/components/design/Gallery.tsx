@@ -26,7 +26,7 @@ const Gallery: FC<GalleryProps> = () => {
   const [bottomText, setBottomText] = useState<ImageTextState['bottomText']>('');
   const [uploadedImg, setUploadedImg] = useState<string>('');
   const [imgUrls, setImgUrls] = useState<string[]>();
-  const [refreshing, setRefreshing] = useState<boolean>(false);
+
 
 
 
@@ -46,7 +46,7 @@ const Gallery: FC<GalleryProps> = () => {
     };
 
     fetchImages();
-  }, []);
+  }, [isLoading]);
 
 
 
@@ -68,17 +68,7 @@ const Gallery: FC<GalleryProps> = () => {
 
 
 
-  const handleRefresh = async () => {
-    setRefreshing(true);
-    const imgArray = await Promise.all(
-      Array.from(Array(4)).map(async () => {
-        return generateRandomUrl();
-      })
-    );
-    setImgUrls(imgArray);
-    setRefreshing(false);
-  };
-
+ 
 
 
 //toast on download success
@@ -182,7 +172,7 @@ const handlePng = async () => {
           <span className="absolute h-5 w-5 right-0 top-0 animate-ping inline-flex rounded-full bg-primary"></span>
           Select an image card
         </h2>
-        <button className="relative h-11 max-w-24 items-center justify-center px-6 flex before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max" onClick={handleRefresh}>
+        <button className="relative h-11 max-w-24 items-center justify-center px-6 flex before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max" disabled={isLoading} onClick={() => setIsLoading(!isLoading)}>
           <span className="relative text-base font-semibold text-primary dark:text-white">
             {refreshing ? "Refreshing" : "Refresh"}
           </span>
