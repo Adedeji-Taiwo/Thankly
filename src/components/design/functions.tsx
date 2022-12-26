@@ -64,9 +64,8 @@ export const handleUpload = (event: React.ChangeEvent<HTMLInputElement>, setUplo
 
 
 //modal buttons functions
-export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setTopText: (value: React.SetStateAction<string>) => void, setCompleted: (value: React.SetStateAction<boolean>) => void) => {
+export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setTopText: (value: React.SetStateAction<string>) => void) => {
   setCurrentIndex(index);
-  setCompleted(false);
   setTopText("Thank you");
 
 };

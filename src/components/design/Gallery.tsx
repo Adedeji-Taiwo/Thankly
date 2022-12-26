@@ -49,7 +49,7 @@ const Gallery: FC<GalleryProps> = () => {
   //single image card
   const renderImageContent = (src: string, index: number) => {
     return (
-      <div onClick={(e) => openModal(e, index, setCurrentIndex, setTopText, setCompleted)} key={index} className="relative cursor-pointer before:transition-opacity-ease before:opacity-0 after:transition-opacity-ease after:opacity-0
+      <div onClick={(e) => openModal(e, index, setCurrentIndex, setTopText)} key={index} className="relative cursor-pointer before:transition-opacity-ease before:opacity-0 after:transition-opacity-ease after:opacity-0
             hover:before:transition-opacity-ease hover:before:opacity-100  after:transition-opacity-ease hover:after:opacity-100
             after:content-['\02194'] after:text-[50px] after:absolute after:text-white after:left-[40%] after:top-1/3 after:block after:-rotate-45 after:transform after:-translate-3d-50-pct-minus-50-pct-0 
             before:content-none before:absolute before:top-0 before:left-0 before:right-0 before:block before:bottom-[4px] before:bg-['rgba(34, 34, 34, 0.5)'] ">
