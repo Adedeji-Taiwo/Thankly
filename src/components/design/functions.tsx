@@ -3,18 +3,6 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 
 
-
-// Generate a random image URL
-export const generateRandomUrl = () => {
-  return `https://source.unsplash.com/random/300x30${Math.floor(Math.random() * 10)}`;
-};
-
-
-
-
-
-
-
 //loading skeletal component
 export const skeletonLoader = Array.from({ length: 4 }, (_, index) => {
   return <SkeletonTheme key={index} baseColor="#293049" highlightColor="#434959" height={300}>
@@ -57,6 +45,13 @@ export const handleUpload = (event: React.ChangeEvent<HTMLInputElement>, setUplo
 
 
 
+export const generateRandomUrl = async () => {
+  const response = await fetch(
+    `https://source.unsplash.com/random/300x3000${Math.floor(Math.random() * 10)}`
+);
+return response.url;
+}
+
 
 
 
@@ -70,12 +65,11 @@ export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (
 
 };
 
-export const closeModal = (e: React.MouseEvent | undefined, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setCompleted: (value: React.SetStateAction<boolean>) => void) => {
+export const closeModal = (e: React.MouseEvent | undefined, setCurrentIndex: (value: React.SetStateAction<number | null>) => void) => {
   if (e) {
     e.preventDefault();
   }
   setCurrentIndex(null);
-  setCompleted(true);
 };
 
 

@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import { Toaster } from 'react-hot-toast';
 import { Header, Hero, Features, Gallery, Testimonials, Footer, BackToTop } from './components';
 
-
 function App() {
   useEffect(() => {
     AOS.init();
