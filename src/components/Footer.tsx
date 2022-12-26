@@ -1,25 +1,56 @@
-import React from 'react'
+import React, {FC} from 'react';
 
-const Footer = () => {
-  return (
-    <footer className="py-20 md:py-40">
-    <div>
-      <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
-        <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
-          <div
-            className="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-start"
-          >
-            <ul className="list-inside list-disc space-y-8">
-              <li><a href="#home" className="transition hover:text-primary">Home</a></li>
-  
-              <li><a href="#features" className="transition hover:text-primary">Features</a></li>
-              <li><a href="design" className="transition hover:text-primary">Design</a></li>
-              <li><a href="testimonials" className="transition hover:text-primary"></a>Testimonials</li>
-              <li><a href="#" className="transition hover:text-primary">Contact</a></li>
-              <li><a href="#" className="transition hover:text-primary">Terms of Use</a></li>
-            </ul>
-  
-            <ul role="list" className="space-y-8">
+type FooterLink = {
+name: string;
+href: string;
+}
+
+const Footer: FC = () => {
+const links: FooterLink[] = [
+{
+name: 'Home',
+href: '#home',
+},
+{
+name: 'Features',
+href: '#features',
+},
+{
+name: 'Design',
+href: 'design',
+},
+{
+name: 'Testimonials',
+href: 'testimonials',
+},
+{
+name: 'Contact',
+href: '#',
+},
+{
+name: 'Terms of Use',
+href: '#',
+},
+];
+
+
+return (
+<footer className="py-20 md:py-40">
+  <div>
+    <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
+      <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
+        <div className="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-start">
+          <ul className="list-inside list-disc space-y-8">
+            {links.map((link) => (
+              <li key={link.name}>
+                <a href={link.href} className="transition hover:text-primary">
+                {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <ul role="list" className="space-y-8">
               <li>
                 <a href="#" className="flex items-center space-x-3 transition hover:text-primary">
                   <svg
@@ -83,6 +114,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           <div
             className="m-auto mt-16 w-10/12 space-y-6 text-center sm:mt-auto sm:w-5/12 sm:text-left"
           >
@@ -97,14 +129,15 @@ const Footer = () => {
             </span>
   
             <span className="block text-gray-500 dark:text-gray-400"
-              >Need help? <a href="#" className="font-semibold text-gray-600 dark:text-white"> Contact Us</a></span
-            >
-          </div>
+              >Need help? <a href="#" className="font-semibold text-gray-600 dark:text-white"> Contact Us</a>
+            </span>
         </div>
       </div>
-    </div>
+  </div>
+</div>
 </footer>
-  )
-}
 
-export default Footer
+)}
+
+
+export default Footer;
