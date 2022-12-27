@@ -48,16 +48,12 @@ export const handleUpload = (event: React.ChangeEvent<HTMLInputElement>, setUplo
 
 
 
-export const generateRandomUrl = async (): Promise<string | undefined> => {
-  const url = `https://source.unsplash.com/random/300x30${Math.floor(Math.random() * 10)}`;
-
-  try {
-    const response = await fetch(url);
-    return response.url;
-  } catch (error) {
-    console.log(error)
-  }
-};
+export const generateRandomUrl = async () => {
+  const response = await fetch(
+    `https://source.unsplash.com/random/300x30${Math.floor(Math.random() * 10)}`
+);
+  return response.url;
+}
 
 
 

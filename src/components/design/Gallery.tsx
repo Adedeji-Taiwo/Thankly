@@ -239,7 +239,7 @@ const Gallery: FC<GalleryProps> = () => {
         />
       )}
 
-      {/*ltest download*/}
+      {/*latest download*/}
       {latestCard && (
         <LatestDownload
           name={latestCard.name}
