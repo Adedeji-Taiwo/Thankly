@@ -14,14 +14,17 @@ export const skeletonLoader = Array.from({ length: 4 }, (_, index) => {
 
 
 
-
-
-
-
-//onload setter for image loaded images
-export const onLoad = (setIsLoaded: (value: React.SetStateAction<boolean>) => void) => {
-  setIsLoaded(true);
+//store latest card to local storage
+export const cardSaver = (type: string, bottomText: string, dataUrl: string | File | Blob | Uint8Array,) => {
+  const card = JSON.parse(localStorage.getItem('thankly')!);
+  card && localStorage.removeItem('thankly');
+  localStorage.setItem('thankly', JSON.stringify({
+    type: type,
+    name: `Thankly-${bottomText}`,
+    data: dataUrl,
+  }));
 }
+
 
 
 
@@ -45,13 +48,16 @@ export const handleUpload = (event: React.ChangeEvent<HTMLInputElement>, setUplo
 
 
 
-export const generateRandomUrl = async () => {
-  const response = await fetch(
-    `https://source.unsplash.com/random/300x3000${Math.floor(Math.random() * 10)}`
-);
-return response.url;
-}
+export const generateRandomUrl = async (): Promise<string | undefined> => {
+  const url = `https://source.unsplash.com/random/300x30${Math.floor(Math.random() * 10)}`;
 
+  try {
+    const response = await fetch(url);
+    return response.url;
+  } catch (error) {
+    console.log(error)
+  }
+};
 
 
 
@@ -59,10 +65,10 @@ return response.url;
 
 
 //modal buttons functions
-export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setTopText: (value: React.SetStateAction<string>) => void) => {
+export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setCompleted: (value: React.SetStateAction<boolean>) => void, setTopText: (value: React.SetStateAction<string>) => void) => {
   setCurrentIndex(index);
   setTopText("Thank you");
-
+  setCompleted(false);
 };
 
 export const closeModal = (e: React.MouseEvent | undefined, setCurrentIndex: (value: React.SetStateAction<number | null>) => void) => {

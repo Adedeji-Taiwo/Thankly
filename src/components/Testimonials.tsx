@@ -63,8 +63,8 @@ const Testimonials = () => {
    
 <div className="text-gray-600 dark:text-gray-300 md:pt-32 pt-24" id="testimonials">
   <div className='container px-4 lg:px-8 mx-auto max-w-screen-xl'>
-    <div data-aos="fade-up" data-aos-delay="300" className="mb-20 space-y-4 px-6 md:px-0">
-      <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+    <div data-aos="fade-up" data-aos-delay="300" className="mb-20 space-y-4">
+      <h2 className="text-left text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
         What our users are saying.
       </h2>
     </div>

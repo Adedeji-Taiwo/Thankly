@@ -57,7 +57,8 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                         {/* This id is defined for downloading images */}
                         <img id="img" src={src} className="w-full aspect-square md:h-auto h-[40vh]" />
                         <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl ${enabled ? 'text-white' : 'text-black'} top-7`}>{topText}</h2>
-                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl capitalize ${enabled ? 'text-white' : 'text-black'}  text-white bottom-9`}>{bottomText}</h2>
+                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl capitalize ${enabled ? 'text-white' : 'text-black'} bottom-9`}>{bottomText}</h2>
+                        <p className={`text-primary text-xs text-center absolute left-0 right-0 mx-auto bottom-4 italic`}>Thankly</p>
                     </div>
 
                     <div className="flex md:w-2/5 w-full justify-center items-center bg-white dark:bg-gray-900">
@@ -73,7 +74,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                             <div className="w-full dark:border-gray-800 border-dotted border-2 p-2">
                                 <span className="sr-only">Choose file</span>
                                 <div className="font-bold h-8 mt-3 text-gray-600 text-xs leading-8 uppercase">Replace with local image</div>
-                                <input type="file" className="block w-full text-sm text-slate-500 my-2
+                                <input type="file" accept="image/*" className="block w-full text-sm text-slate-500 my-2
                                     file:mr-4 file:py-2 file:px-4
                                     file:rounded-full file:border-0
                                     file:text-sm file:font-semibold
