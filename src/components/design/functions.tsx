@@ -67,7 +67,7 @@ export const generateRandomUrl = async (): Promise<string | undefined> => {
 //modal buttons functions
 export const openModal = (e: React.MouseEvent, index: number, setCurrentIndex: (value: React.SetStateAction<number | null>) => void, setCompleted: (value: React.SetStateAction<boolean>) => void, setTopText: (value: React.SetStateAction<string>) => void) => {
   setCurrentIndex(index);
-  setTopText("Thank you");
+  setTopText("Thank you!");
   setCompleted(false);
 };
 

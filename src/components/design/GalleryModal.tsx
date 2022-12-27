@@ -8,7 +8,7 @@ type GalleryModalProps = {
     findNext: (e?: React.MouseEvent) => void;
     hasPrev: boolean;
     hasNext: boolean;
-    src: string;
+    src: string | undefined;
     topText: string,
     bottomText: string,
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
@@ -56,8 +56,8 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
                         <button id="next" className={`absolute right-0  top-1/2 rounded-l-md inline  ${hasNext ? 'text-gray-900' : 'text-white'} text-3xl font-light ${hasNext ? 'bg-white' : 'bg-primary'} w-10 h-10 text-center`} onClick={findNext} disabled={!hasNext}>&rsaquo;</button>
                         {/* This id is defined for downloading images */}
                         <img id="img" src={src} className="w-full aspect-square md:h-auto h-[40vh]" />
-                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl ${enabled ? 'text-white' : 'text-black'} top-7`}>{topText}</h2>
-                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-4xl capitalize ${enabled ? 'text-white' : 'text-black'} bottom-9`}>{bottomText}</h2>
+                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-3xl md:text-4xl ${enabled ? 'text-white' : 'text-black'} top-7`}>{topText}</h2>
+                        <h2 className={`absolute left-0 right-0 mx-auto font-black text-center text-3xl md:text-4xl capitalize ${enabled ? 'text-white' : 'text-black'} bottom-9`}>{bottomText}</h2>
                         <p className={`text-primary text-xs text-center absolute left-0 right-0 mx-auto bottom-4 italic`}>Thankly</p>
                     </div>
 

@@ -29,10 +29,10 @@ type GalleryProps = {};
 const Gallery: FC<GalleryProps> = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [topText, setTopText] = useState<ImageTextState['topText']>('Thank You');
+  const [topText, setTopText] = useState<ImageTextState['topText']>('Thank You!');
   const [bottomText, setBottomText] = useState<ImageTextState['bottomText']>('');
   const [uploadedImg, setUploadedImg] = useState<string>('');
-  const [imgUrls, setImgUrls] = useState<string[]>();
+  const [imgUrls, setImgUrls] = useState<(string | undefined)[]>();
   const [latestCard, setLatestCard] = useState<latestCardType | undefined>();
   const [completed, setCompleted] = useState<boolean>(false);
 
@@ -74,7 +74,7 @@ const Gallery: FC<GalleryProps> = () => {
 
 
   //single image card
-  const renderImageContent = (src: string, index: number) => {
+  const renderImageContent = (src: string | undefined, index: number) => {
     return (
       <div onClick={(e) => openModal(e, index, setCurrentIndex, setCompleted, setTopText)} key={index} className="relative cursor-pointer before:transition-opacity-ease before:opacity-0 after:transition-opacity-ease after:opacity-0
             hover:before:transition-opacity-ease hover:before:opacity-100  after:transition-opacity-ease hover:after:opacity-100
@@ -99,7 +99,7 @@ const Gallery: FC<GalleryProps> = () => {
           <img src={success} className="w-10 mx-auto" alt="successful download" />
 
           <article className="text-center mt-4">
-            <h1 className="text-lg font-semibold text-gray-800">
+            <h1 className="md:text-lg text-base font-semibold text-gray-800">
               Image Downloaded!
             </h1>
           </article>
@@ -152,9 +152,6 @@ const Gallery: FC<GalleryProps> = () => {
       node.style.borderRadius = "6px";
       node.style.padding = "4px";
       node.style.backgroundImage = "linear-gradient(to right, #9333EA, #A5B4FC)";
-
-
-
 
 
       return htmlToImage
