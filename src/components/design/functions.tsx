@@ -47,7 +47,7 @@ export const handleUpload = (event: React.ChangeEvent<HTMLInputElement>, setUplo
 
 
 
-
+//return an array of randomized urls
 export const generateRandomUrl = async () => {
   const response = await fetch(
     `https://source.unsplash.com/random/300x30${Math.floor(Math.random() * 10)}`

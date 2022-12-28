@@ -44,7 +44,6 @@ const Gallery: FC<GalleryProps> = () => {
   useEffect(() => {
     // Fetch 4 random images from Unsplash API and store their URLs in an array
     const fetchImages = async () => {
-      //setIsLoading(true);
       const imgArray = await Promise.all(
         Array.from(Array(4)).map(async () => {
           return generateRandomUrl();
