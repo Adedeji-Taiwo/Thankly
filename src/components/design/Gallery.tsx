@@ -28,7 +28,7 @@ type GalleryProps = {};
 
 const Gallery: FC<GalleryProps> = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [topText, setTopText] = useState<ImageTextState['topText']>('Thank You!');
   const [bottomText, setBottomText] = useState<ImageTextState['bottomText']>('');
   const [uploadedImg, setUploadedImg] = useState<string>('');
@@ -44,7 +44,7 @@ const Gallery: FC<GalleryProps> = () => {
   useEffect(() => {
     // Fetch 4 random images from Unsplash API and store their URLs in an array
     const fetchImages = async () => {
-      setIsLoading(true);
+      //setIsLoading(true);
       const imgArray = await Promise.all(
         Array.from(Array(4)).map(async () => {
           return generateRandomUrl();
@@ -80,7 +80,7 @@ const Gallery: FC<GalleryProps> = () => {
             hover:before:transition-opacity-ease hover:before:opacity-100  after:transition-opacity-ease hover:after:opacity-100
             after:content-['\02194'] after:text-[50px] after:absolute after:text-white after:left-[40%] after:top-1/3 after:block after:-rotate-45 after:transform after:-translate-3d-50-pct-minus-50-pct-0 
             before:content-none before:absolute before:top-0 before:left-0 before:right-0 before:block before:bottom-[4px] before:bg-['rgba(34, 34, 34, 0.5)'] ">
-        <img src={src} key={src} className={`w-full rounded-md bg-gradient-to-r from-primary to-indigo-300 p-1 aspect-square`} />
+        <img src={src} key={src} className={`w-full rounded-md bg-gradient-to-r from-primary to-indigo-300 p-1 ${!isLoading && 'aspect-square'}`} />
       </div>
     );
   };
