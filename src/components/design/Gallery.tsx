@@ -4,7 +4,6 @@ import GalleryModal from './GalleryModal';
 import LatestDownload from './LatestDownload';
 import { generateRandomUrl, cardSaver, skeletonLoader, handleChange, handleUpload, openModal, closeModal, findNext, findPrev } from './functions';
 import download from "downloadjs";
-import html2canvas from 'html2canvas';
 import * as htmlToImage from "html-to-image";
 import { toast } from 'react-hot-toast';
 import success from './../../assets/download/success.png';
@@ -142,7 +141,6 @@ const Gallery: FC<GalleryProps> = () => {
 
 
     //utilize this condition for image selections from api and not upload
-    if (!uploadedImg) {
       setTimeout(() => {
         toastMsg();
       }, 4000);
@@ -153,7 +151,8 @@ const Gallery: FC<GalleryProps> = () => {
       node.style.padding = "4px";
       node.style.backgroundImage = "linear-gradient(to right, #9333EA, #A5B4FC)";
 
-
+      
+      //ran twice to capture image for ios/mcos
       return htmlToImage
         .toPng(node)
         .then((dataUrl) => {
@@ -164,27 +163,7 @@ const Gallery: FC<GalleryProps> = () => {
           //store latest card to local storage
           cardSaver("htmlToImage", bottomText,  dataUrl);
         });
-    }
-
-
-    //use rest of function when its file upload
-    const copiedElem = elem.cloneNode(
-      true
-    ) as HTMLElement;
-
-
-    document.body.append(copiedElem);
-
-
-    const canvas = await html2canvas(copiedElem);
-    const dataURL = canvas.toDataURL('image/png');
-    download(dataURL, `Thankly-${bottomText}`, 'image/png');
-
-    toastMsg();
-
-
-    //store latest card to local storage
-    cardSaver("htmlToCanvas", bottomText,  dataURL);
+   
   };
 
 
