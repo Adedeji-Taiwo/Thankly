@@ -19,7 +19,6 @@ You will find below the different third party libraries used in the project.
 |  | `react-dom`  | Serves as the entry point of the DOM-related rendering paths  |
 | Typescript | `typescript`  | TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale |
 | Html-to-Image | `html-to-image`  | Generates an image from a DOM node using HTML5 canvas and SVG. |
-| Html2Canvas | `html2Canvas`  | Allows you to take "screenshots" of webpages or parts of it, directly on the users browser. |
 | downloadjs | `downloadjs`  | downloadJs is used to trigger a file download from JavaScript. |
 | React-hot-toast | `react-hot-toast`  | Add beautiful notifications to your React app with react-hot-toast. |
 
