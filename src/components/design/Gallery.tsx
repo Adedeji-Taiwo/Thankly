@@ -152,13 +152,14 @@ const Gallery: FC<GalleryProps> = () => {
       node.style.backgroundImage = "linear-gradient(to right, #9333EA, #A5B4FC)";
 
       
-      //ran twice to capture image for ios/mcos
+      //ran twice to capture image for ios/macos
       return htmlToImage
         .toPng(node)
         .then((dataUrl) => {
           htmlToImage.toPng(node).then((dataUrl) => {
             download(dataUrl, `Thankly-${bottomText}`);
           })
+
 
           //store latest card to local storage
           cardSaver("htmlToImage", bottomText,  dataUrl);
@@ -172,10 +173,6 @@ const Gallery: FC<GalleryProps> = () => {
 
   //handle latest download
   const handleLatestDownload = () => {
-    if (latestCard?.type === "htmlToCanvas") {
-      return download(latestCard?.data, latestCard?.name, 'image/png');
-    }
-
     download(latestCard!.data, latestCard?.name);
   }
 
