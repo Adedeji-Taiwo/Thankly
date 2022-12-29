@@ -35,6 +35,7 @@ const Gallery: FC<GalleryProps> = () => {
   const [imgUrls, setImgUrls] = useState<(string | undefined)[]>();
   const [latestCard, setLatestCard] = useState<latestCardType | undefined>();
   const [completed, setCompleted] = useState<boolean>(false);
+  
 
 
 
@@ -156,8 +157,9 @@ const Gallery: FC<GalleryProps> = () => {
       return htmlToImage
         .toPng(node)
         .then((dataUrl) => {
-          download(dataUrl, `Thankly-${bottomText}`);
-
+          htmlToImage.toPng(node).then((dataUrl) => {
+            download(dataUrl, `Thankly-${bottomText}`);
+          })
 
           //store latest card to local storage
           cardSaver("htmlToImage", bottomText,  dataUrl);
