@@ -1,7 +1,7 @@
 # Thankly
 
 ## Overview
-Revivar Assessment - A downloadable appreciation card generator
+A downloadable appreciation card generator
 
 This project was bootstrapped with [Vite](https://vitejs.dev/guide/).
 
